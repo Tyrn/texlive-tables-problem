@@ -1,0 +1,65 @@
+\documentclass{article}
+
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{capt-of}% or use the larger `caption` package
+
+\usepackage{makecell}
+\usepackage{multirow}
+
+\usepackage{arydshln}
+
+\newcommand{\colhead}[1]{\textit{\textbf{#1}}}
+\newcommand{\sj}[1]{\textit{#1}}
+\newcommand{\tn}[1]{\scriptsize #1}
+\newcommand{\cdashln}{\cdashline{3-9}}
+\newcommand{\cdashlnex}{\cdashline{3-12}}
+\newcommand{\mkcellbf}[1]{\makecell{\textbf{#1}}}
+\newcommand{\mkcelltn}[1]{\makecell{\scriptsize #1}}
+\newcommand{\mkcellitbf}[1]{\makecell{\textit{\textbf{#1}}}}
+\usepackage[margin=0.3in]{geometry}
+
+\newcommand{\twotabvspace}{\vspace{0.3in}}
+
+\begin{document}
+\afterpage{%
+    \clearpage% Flush earlier floats (otherwise order might not be correct)
+    \thispagestyle{empty}% empty page style (?)
+        \centering % Center table
+
+        \begin{tabular}[]{c}
+            \Large Common verbs \\
+        \end{tabular}
+
+        \twotabvspace
+
+        \begin{tabular}[]{|l|l|l|l|l|l|l|l|l|l|l|l|}
+            \hline
+            & \multirow{2}{*}{\mkcellitbf{Subj}}
+            & \multirow{2}{*}{\mkcellitbf{Present}}
+            & \multirow{2}{*}{\mkcellitbf{Preterit}}
+            & \multirow{2}{*}{\mkcellitbf{Imperfect}}
+            & \multirow{2}{*}{\mkcellbf{Future}}
+            & \multirow{2}{*}{\mkcellbf{Cond}}
+            & \multicolumn{2}{l|}{\mkcellitbf{Subj Imperfect}}
+            & \multirow{2}{*}{\mkcellitbf{Subj Fut}}
+            & \multirow{2}{*}{\mkcellitbf{Subj/Neg}}
+            & \multirow{2}{*}{\mkcellitbf{Affirm}} \\
+            \cline{8-9}
+            &&&&&&& \tn{esp} & \tn{lat} &&& \\
+            \hline
+                    & \sj{yo}   & soy   & fui      & era    & seré    & ía    & fuese    & fuera    & fuere    & sea    &        \\
+                    & \sj{tú}   & eres  & fuiste   & eras   & serás   & ías   & fueses   & fueras   & fueres   & seas   & sé     \\
+            \tn{~~} & \sj{Ud.}  & es    & fue      & era    & será    & ía    & fuese    & fuera    & fuere    & sea    & sea    \\
+                    & \sj{Ns.}  & somos & fuimos   & éramos & seremos & íamos & fuésemos & fuéramos & fuéremos & seamos & seamos \\
+                    & \sj{Vs.}  & sois  & fuisteis & erais  & seréis  & íais  & fueseis  & fuerais  & fuereis  & seáis  & sed    \\
+                    & \sj{Uds.} & son   & fueron   & eran   & serán   & ían   & fuesen   & fueran   & fueren   & sean   & sean   \\\hline
+        \end{tabular}
+        \captionof{table}{Ser}% Add 'table' caption
+
+        \twotabvspace
+
+    \clearpage% Flush page
+}
+\end{document}
+
